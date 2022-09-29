@@ -19,7 +19,7 @@ resource "launchdarkly_project" "orlando-codecamp" {
     environments {
       name = "dev"
       key = "DEV"
-      color="blue"
+      color="FFFFFF"
     }
 }
 
