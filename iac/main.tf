@@ -12,7 +12,7 @@ terraform {
 resource "launchdarkly_project" "orlando-codecamp" {
     key  = "orlando-codecamp"
     name = "Orlando Code Camp"
-    environment {
+    environments {
       variables = {
         foo="bar"
       }
