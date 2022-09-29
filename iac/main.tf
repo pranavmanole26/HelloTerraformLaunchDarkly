@@ -13,9 +13,9 @@ resource "launchdarkly_project" "orlando-codecamp" {
     key  = "orlando-codecamp"
     name = "Orlando Code Camp"
     environments {
-      variables = {
-        foo="bar"
-      }
+      name = "dev"
+      key = "DEV"
+      color="blue"
     }
 }
 
