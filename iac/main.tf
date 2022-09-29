@@ -12,6 +12,7 @@ terraform {
 resource "launchdarkly_project" "orlando-codecamp" {
     key  = "orlando-codecamp"
     name = "Orlando Code Camp"
+    environments = ["dev"]
 }
 
 # Create a new feature flag
