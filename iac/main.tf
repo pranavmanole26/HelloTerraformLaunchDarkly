@@ -39,10 +39,10 @@ resource "launchdarkly_feature_flag" "killswitch-agenda" {
 }
 
 # Turn on feature flag for production (100%)
-resource "launchdarkly_feature_flag_environment" "killswitch-production-value" {
-  flag_id = launchdarkly_feature_flag.killswitch-agenda.id
-  env_key = "DEV"
+# resource "launchdarkly_feature_flag_environment" "killswitch-production-value" {
+#   flag_id = launchdarkly_feature_flag.killswitch-agenda.id
+#   env_key = "DEV"
 
-  off_variation = 0
-  fallthrough {}
-}
+#   off_variation = 0
+#   fallthrough {}
+# }
