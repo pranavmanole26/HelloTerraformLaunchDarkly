@@ -39,6 +39,6 @@ resource "launchdarkly_feature_flag_environment" "killswitch-production-value" {
   flag_id = launchdarkly_feature_flag.killswitch-agenda.id
   env_key = "production"
 
-  off_variation = false
+  off_variation = 0
   fallthrough {}
 }
