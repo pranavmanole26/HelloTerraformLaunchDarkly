@@ -8,6 +8,10 @@ terraform {
   }
 }
 
+provider "launchdarkly" {
+  access_token = var.launchdarkly_access_token
+}
+
 # Create a new project
 resource "launchdarkly_project" "orlando-codecamp" {
     key  = "orlando-codecamp"
