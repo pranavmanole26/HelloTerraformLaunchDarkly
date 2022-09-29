@@ -1,7 +1,11 @@
 # Configure the LaunchDarkly provider
-provider "launchdarkly" {
-    version     = "~> 1.0"
-    access_token = var.launchdarkly_access_token
+terraform {
+  required_providers {
+    launchdarkly = {
+      source  = "launchdarkly/launchdarkly"
+      version = "~> 2.0"
+    }
+  }
 }
 
 # Create a new project
