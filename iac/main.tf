@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "launchdarkly" {
-  access_token = var.launchdarkly_access_token
+  access_token = "api-fb6c93f9-cf67-4b1c-af6d-500d1cb6f424"
 }
 
 # Create a new project
