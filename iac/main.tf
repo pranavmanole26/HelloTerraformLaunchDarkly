@@ -13,9 +13,9 @@ provider "launchdarkly" {
 }
 
 # Create a new project
-resource "launchdarkly_project" "orlando-codecamp" {
-    key  = "orlando-codecamp"
-    name = "Orlando Code Camp"
+resource "launchdarkly_project" "ratelimit-config-proj" {
+    key  = "ratelimit-config-proj"
+    name = "Ratelimit Config Proj"
     environments {
       name = "dev"
       key = "DEV"
@@ -24,25 +24,16 @@ resource "launchdarkly_project" "orlando-codecamp" {
 }
 
 # Create a new feature flag
-resource "launchdarkly_feature_flag" "killswitch-agenda" {
-    project_key = launchdarkly_project.orlando-codecamp.key
-    key         = "killswitch-agenda"
-    name        = "Killswitch for Agenda"
+resource "launchdarkly_feature_flag" "ratelimit-config-ff" {
+    project_key = launchdarkly_project.ratelimit-config-proj.key
+    key         = "ratelimit-config-ff"
+    name        = "ratelimit config ff"
 
-    variation_type = "boolean"
+    variation_type = "json"
     variations {
-        value = true
-    }
-    variations {
-        value = false
+        name = "dev"
+        value = {
+            "GET_/test" : {}
+        }
     }
 }
-
-# Turn on feature flag for production (100%)
-# resource "launchdarkly_feature_flag_environment" "killswitch-production-value" {
-#   flag_id = launchdarkly_feature_flag.killswitch-agenda.id
-#   env_key = "DEV"
-
-#   off_variation = 0
-#   fallthrough {}
-# }
