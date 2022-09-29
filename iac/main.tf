@@ -31,11 +31,13 @@ resource "launchdarkly_feature_flag" "ratelimit-config-ff" {
 
     variation_type = "json"
     variations {
+        name="dev"
         value = jsonencode({
             "GET_/test" : {}
         })
     }
     variations {
+          name="prd"
           value = jsonencode({
               "GET_/test1" : {}
           })
