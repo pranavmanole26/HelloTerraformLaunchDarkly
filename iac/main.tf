@@ -1,6 +1,6 @@
 # Configure the LaunchDarkly provider
 provider "launchdarkly" {
-    version     = "~> 1.0"
+    version     = "~> 2.0"
     access_token = var.launchdarkly_access_token
 }
 
