@@ -13,9 +13,9 @@ provider "launchdarkly" {
 }
 
 # Create a new project
-resource "launchdarkly_project" "ratelimit-config-proj" {
-    key  = "ratelimit-config-proj"
-    name = "Ratelimit Config Proj"
+resource "launchdarkly_project" "ratelimit-config" {
+    key  = "ratelimit-config"
+    name = "Ratelimit Config"
     environments {
       name = "dev"
       key = "DEV"
@@ -25,7 +25,7 @@ resource "launchdarkly_project" "ratelimit-config-proj" {
 
 # Create a new feature flag
 resource "launchdarkly_feature_flag" "ratelimit-config-ff" {
-    project_key = launchdarkly_project.ratelimit-config-proj.key
+    project_key = launchdarkly_project.ratelimit-config.key
     key         = "ratelimit-config-ff"
     name        = "ratelimit config ff"
 
